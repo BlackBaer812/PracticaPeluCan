@@ -4,6 +4,8 @@
 
 package com.proyecto.peluqueriacanina;
 
+import IGrafica.Principal;
+
 /**
  *
  * @author usuario
@@ -11,6 +13,12 @@ package com.proyecto.peluqueriacanina;
 public class PeluqueriaCanina {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Principal prince = new Principal();
+        prince.setVisible(true);
+        
+        //Para que salga al medio
+        prince.setLocationRelativeTo(null);
+        
     }
 }
