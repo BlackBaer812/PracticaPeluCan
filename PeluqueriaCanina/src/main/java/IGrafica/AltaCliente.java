@@ -4,16 +4,24 @@
  */
 package IGrafica;
 
+import Logica.Controladora;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author usuario
  */
 public class AltaCliente extends javax.swing.JFrame {
 
+    //Controladora de la lógica
+    Controladora control = new Controladora();
+    
     /**
      * Creates new form AltaCliente
      */
     public AltaCliente() {
+        //control = new Controladora();
         initComponents();
     }
 
@@ -205,6 +213,11 @@ public class AltaCliente extends javax.swing.JFrame {
         btnGuardar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Documents\\NetBeansProjects\\PracticaPeluCan\\guardar.png")); // NOI18N
         btnGuardar.setText(" Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         btnLimpiar.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Documents\\NetBeansProjects\\PracticaPeluCan\\escoba(pequena).png")); // NOI18N
@@ -300,7 +313,32 @@ public class AltaCliente extends javax.swing.JFrame {
         txtObservaciones.setText("");
         cmbAlergico.setSelectedIndex(0);
         cmbAtEsp.setSelectedIndex(0);
+        
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        //String
+        String nomMasco = txtNomPerro.getText();
+        String raza = txtRaza.getText();
+        String color = txtColor.getText();
+        String nomDueno = txtNomDueno.getText();
+        String movDueno = txtMovDueno.getText();
+        String observ = txtObservaciones.getText();
+        
+        //Combos
+        String alergico = (String) cmbAlergico.getSelectedItem();
+        String attEsp = (String) cmbAtEsp.getSelectedItem();
+        
+        control.guardar(nomMasco, raza, color, nomDueno, movDueno, observ, 
+                alergico, attEsp);
+        
+        JOptionPane optionPane = new JOptionPane ("Se guardo correctamente");
+        optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        JDialog dialog = optionPane.createDialog("Guardado exitoso");
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     
 
