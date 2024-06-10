@@ -136,8 +136,11 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="24" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Editar cliente"/>
+                <Property name="text" type="java.lang.String" value="Consulta/Edici&#xf3;n/Eliminaci&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditClienActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>

@@ -51,7 +51,12 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnEditClien.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        btnEditClien.setText("Editar cliente");
+        btnEditClien.setText("Consulta/Edición/Eliminación");
+        btnEditClien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditClienActionPerformed(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\usuario\\Documents\\NetBeansProjects\\PracticaPeluCan\\descarga.jpg")); // NOI18N
 
@@ -130,6 +135,15 @@ public class Principal extends javax.swing.JFrame {
         //Esto es para que la pantalla salga en el medio
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnAltaActionPerformed
+
+    private void btnEditClienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditClienActionPerformed
+        ConsultaDatos pantalla = new ConsultaDatos();
+        
+        pantalla.setVisible(true);
+        
+        //Esto es para que la pantalla salga en el medio
+        pantalla.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEditClienActionPerformed
 
     
 
